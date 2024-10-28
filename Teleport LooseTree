@@ -1,0 +1,20 @@
+-- Teleport the player and the model "LooseTree" to specified coordinates
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait() -- Wait for the character to load
+local model = game.Workspace.World.LooseItems:FindFirstChild("LooseTree") -- Find the model
+
+-- Set the target position for the model
+local targetModelPosition = Vector3.new(876, 0, -60)
+
+-- Set the new position for the player: (860, 30, -60)
+local newPlayerPosition = Vector3.new(860, 30, -60)
+
+if character and model then
+    -- Teleport player
+    character:SetPrimaryPartCFrame(CFrame.new(newPlayerPosition))
+
+    -- Teleport model
+    model:SetPrimaryPartCFrame(CFrame.new(targetModelPosition))
+else
+    warn("Character or model not found!")
+end
