@@ -1,0 +1,11 @@
+-- Script to remove Atmosphere in Roblox
+
+local lighting = game:GetService("Lighting")
+
+-- Check if there is an Atmosphere object in Lighting
+local atmosphere = lighting:FindFirstChildOfClass("Atmosphere")
+
+-- If found, destroy the Atmosphere object
+if atmosphere then
+    atmosphere:Destroy()
+end
